@@ -1,8 +1,13 @@
-import React from 'react'
+import { React } from 'react'
+import { Counter } from './Counter'
 
-export const App = () => {
+
+export function App () {
   return (
-    <div>App</div>
+    <div><Counter initialValue={0} increment={1} /></div>
+
+    // <Counter initialValue={0} increment={1} /> Podria usar asi sino le agisno valor a las prop en Counter.jsx
   )
 }
+
 
