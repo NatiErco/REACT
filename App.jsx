@@ -1,8 +1,9 @@
-import React from 'react'
+import { React } from 'react'
+import { AlertClick } from './AlertClick'
 
-export const App = () => {
+export function App () {
   return (
-    <div>App</div>
+    <div><AlertClick/></div>
   )
 }
 
