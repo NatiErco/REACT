@@ -53,7 +53,6 @@ function handleSubmit (event){  // se encarga de gestionar lo que ocurre cuando 
         <input type="checkbox" checked = {remember} onChange={handleRememberChange}/>
       </label>
       <br/>
-      <button type="submit">Login</button>
     </form>
   );
 }
