@@ -1,13 +1,10 @@
 import { React } from 'react'
-import { Counter } from './Counter'
-import { Clock } from './Clock'
 import { MouseClicker } from './Components/MouseClicker'
 
 
 export function App () {
   return (
     <div>
-     <Counter/>
 
     <MouseClicker/>
     </div>
