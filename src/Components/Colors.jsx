@@ -4,7 +4,6 @@ import React from 'react';
 import { Color } from './Color';
 
 
-// Componente Colors
 export function Colors ({ colors }) {
 
     // Mapea sobre la matriz y para cada objeto crea un componente Color, pasando el objeto color como propiedad.
