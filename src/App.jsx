@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { Counter } from './Counter'
 import { Clock } from './Clock'
-import { MouseClicker } from './MouseClicker'
+import { MouseClicker } from './Components/MouseClicker'
 
 
 export function App () {
