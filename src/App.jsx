@@ -1,11 +1,10 @@
 import { React } from "react";
-import { Color } from "./Components/Color";
-import { Colors } from "./Components/Colors";
+import { Container } from "./Components/Container";
 
 export function App() {
 
   return (
-    <div>
+    <Container title={<h1>My title Aplication</h1>}>
       <Colors
         colors={[
           { id: 1, name: "Red" },
@@ -13,6 +12,6 @@ export function App() {
           { id: 3, name: "White" },
         ]}
       />
-    </div>
+       </Container>
   );
 }
