@@ -1,10 +1,3 @@
-// ESTADO PRIMER EJERCICIO:
-
-// ¿el parámetro debería ser una función o un valor inmediato? Funcion ¿Por qué? Respuesta:
-
-//  Deberia ser una funcion y no valor inmediato (función como argumento), donde "c" representa el valor actual del estado counter.
-// Usando una función siempre trabajaremos con el valor más reciente del estado... an cambio si usamos valor inmediato, setCounter(counter + increment)  y no funcion, podriamos incurrir en varios problemas con la sincronizacion y actualizacion.
-
 
 import React, { useEffect, useRef, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
