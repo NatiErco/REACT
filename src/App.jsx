@@ -10,9 +10,8 @@ export function App() {
     
     <div>
 
-    <GithubUser/>
+  <GithubUser username="NatiErco"/>
     <GithubUsers/>
-    
     </div>
   );
 }
