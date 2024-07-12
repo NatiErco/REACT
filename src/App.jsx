@@ -8,7 +8,7 @@ export function App() {
     
     <div>
 
-    <GithubUser/>
+    <GithubUser username="NatiErco"/>
     
     </div>
   );
