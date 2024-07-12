@@ -1,10 +1,18 @@
-import { React } from "react";
-import { Container } from "./Components/Container";
+import { React, useState } from "react";
+import { GithubUser } from "./Components/GithubUser";
+import { GithubUsers } from "./Components/GithubUsers";
+
+
+// Podemos usar React Router para definir rutas y renderizar diferentes componentes cada vez que cambie la ubicacion en la barra de direcciones.
 
 export function App() {
-
   return (
-    <Container title={<h1>My title Aplication</h1>}>
-       </Container>
+    
+    <div>
+
+    <GithubUser/>
+    <GithubUsers/>
+    
+    </div>
   );
 }
