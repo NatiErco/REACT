@@ -1,7 +1,9 @@
+
+
 import React, { useEffect, useState } from 'react';
 
 export function GithubUser({ username }) {
-	const [user, setUser] = useState(null);
+	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
 
@@ -14,7 +16,7 @@ export function GithubUser({ username }) {
 				}
 				return res.json();
 			})
-			.then((json) => setUser(json))
+			.then((json) => setData(json))
 			.catch((error) => setError(error))
 			.finally(() => setLoading(false));
 	}, [username]);
@@ -23,11 +25,11 @@ export function GithubUser({ username }) {
 		<div>
 			{loading && <div>Loading...</div>}
 			{error && <div>{error.message}</div>}
-			{user && (
+			{data && (
 				<div>
-					<img src={user.avatar_url} alt={`${user.login} avatar`} />
-					<div>Username: {user.login}</div>
-					<div>Name: {user.name}</div>
+					<img src={data.avatar_url} alt={`${data.login} avatar`} />
+					<div>Username: {data.login}</div>
+					<div>Name: {data.name}</div>
 				</div>
 			)}
 		</div>
