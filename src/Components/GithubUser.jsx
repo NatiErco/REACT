@@ -1,20 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { UseGithubUser } from "./UseGithubUser";
+import React, { useEffect, useState } from 'react';
 
 export function GithubUser({ username }) {
+	const [user, setUser] = useState(null);
+	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(false);
 
-  const { data, loading, error } = UseGithubUser(username);
+	useEffect(() => {
+		setLoading(true);
+		fetch(`https://api.github.com/users/${username}`)
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error('Network response was not ok');
+				}
+				return res.json();
+			})
+			.then((json) => setUser(json))
+			.catch((error) => setError(error))
+			.finally(() => setLoading(false));
+	}, [username]);
 
-  return (
-   
-    <div>
-    {error && <h1>There has been an error</h1>}
-    {loading && <h1>Loading...</h1>}
-    <p>Login: {data.username}</p>
-    {data &&<h1>{data.name}</h1>}
-    <img src={data.avatar_url} style={{width: 100, height: 100, borderRadius: "50%"}}/>
-     </div>
-    
-);
+	return (
+		<div>
+			{loading && <div>Loading...</div>}
+			{error && <div>{error.message}</div>}
+			{user && (
+				<div>
+					<img src={user.avatar_url} alt={`${user.login} avatar`} />
+					<div>Username: {user.login}</div>
+					<div>Name: {user.name}</div>
+				</div>
+			)}
+		</div>
+	);
 }
- 
