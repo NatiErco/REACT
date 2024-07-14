@@ -8,7 +8,7 @@ import { Products } from "./Components/Products";
 
 export function App() {
   return (
-    <div title={<h1>My Awesome App</h1>}>
+    <Container title={<h1>My Awesome App</h1>}>
       <div>
         <Link to="/">Home</Link> |  <Link to="/products">Products</Link>
         
@@ -18,7 +18,7 @@ export function App() {
         <Route path="products" element={<Catalogue />} />
         <Route path=":id" element={<Products/>}/>
       </Routes>
-    </div>
+    </Container>
   
   );
 }
