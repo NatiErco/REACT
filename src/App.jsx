@@ -1,18 +1,12 @@
 import { React } from "react";
-import { Color } from "./Components/Color";
-import { Colors } from "./Components/Colors";
+import { Container } from "./Components/Container";
 
 export function App() {
 
   return (
-    <div>
-      <Colors
-        colors={[
-          { id: 1, name: "Red" },
-          { id: 2, name: "Yellow" },
-          { id: 3, name: "White" },
-        ]}
-      />
-    </div>
+    <Container>
+      <Cntainer title={<h1>My title Aplication</h1>}>
+       
+    </Container>
   );
 }
