@@ -17,7 +17,7 @@ export function UseGithubUser ({username}) {
       }
 
       setLoading(true);
-      fetch('https://api.github.com/users')
+    fetch(`https://api.github.com/users/${username}`)
         .then((res) => {
           if (!res.ok) {
             throw new Error('Network response was not ok');
