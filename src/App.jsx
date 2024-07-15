@@ -1,10 +1,11 @@
-import { React } from "react";
-import { Container } from "./Components/Container";
+import { Location } from "./Components/Location";
 
 export function App() {
-
   return (
-    <Container title={<h1>My title Aplication</h1>}>
-       </Container>
+    <div>
+      
+        <Location/>
+    
+    </div>
   );
 }
