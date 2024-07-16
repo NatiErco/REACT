@@ -1,40 +1,19 @@
-import React, { useState } from "react";
-import { GithubUser } from "./GithubUser";
+import React, { useEffect, useState } from "react";
+import { UseGithubUser } from "./UseGithubUser";
 
-export function GithubUsers() {
-  const [searchUsername, setSearchUsername] = useState(""); // Es un estado que almacena el nombre de usuario que el usuario está buscando en GitHub. Inicialmente está vacío ("").
-  const [users, setUsers] = useState([]); // users es un estado que almacena la lista de usuarios que se han encontrado y se van a mostrar en la lista.
+export function GithubUser({ username }) {
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(`Submitting search for ${searchUsername}`);
-
-    if (searchUsername.trim() === "") {
-      alert("Por favor, ingrese un nombre de usuario");
-      return;
-    }
-    setUsers((prevUsers) => [...prevUsers, searchUsername]);
-    setSearchUsername("");
-  }
+  const { data, loading, error } = UseGithubUser(username);
 
   return (
+   
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={searchUsername}
-          onChange={(e) => setSearchUsername(e.target.value)}
-        />
-        <button type="submit">Send</button>
-      </form>
-
-      <ul>
-        {users.map((username, index) => (
-          <li key={index}>
-            <GithubUser username={username} />
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    {error && <h1>There has been an error</h1>}
+    {loading && <h1>Loading...</h1>}
+    <p>Login: {data.username}</p>
+    {data &&<h1>{data.name}</h1>}
+    <img src={data.avatar_url} style={{width: 100, height: 100, borderRadius: "50%"}}/>
+     </div>
+    
+);
 }
