@@ -1,10 +1,13 @@
 import { React } from "react";
-import { Container } from "./Components/Container";
+import { GithubUser } from "./Components/GithubUser";
 
 export function App() {
 
   return (
-    <Container title={<h1>My title Aplication</h1>}>
-       </Container>
+    <div
+    <GithubUser username="NatiErco"/>
+
+    </div>
+
   );
 }
