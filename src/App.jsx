@@ -8,7 +8,6 @@ export function App() {
     <GithubUser username="NatiErco"/>
 
     </div>
-  );
-}
+
   );
 }
