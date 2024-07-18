@@ -1,10 +1,18 @@
 import { React } from "react";
-import { Container } from "./Components/Container";
+import { Link, Route, Routes } from "react-router-dom";
+import { GithubUseList } from "./Components/GithubUseList";
+import { ShowGithubUser } from "./Components/ShowGithubUse";
+
+
 
 export function App() {
-
   return (
-    <Container title={<h1>My title Aplication</h1>}>
-       </Container>
-  );
-}
+  
+        <Routes>
+          <Route path="/users" element={<GithubUseList />} />
+          <Route path="/users/:username" element={<ShowGithubUser />} />
+        </Routes>
+      
+    );
+  };
+  
