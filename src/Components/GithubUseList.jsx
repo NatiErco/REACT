@@ -5,14 +5,13 @@ import { ShowGithubUser } from './ShowGithubUse';
 
 export function GithubUseList() {
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const response = await fetch('https://api.github.com/users');
-      const data = await response.json();
-      setUsers(data);
-    };
+  const [data, setData] = useState([]);
 
-    fetchUsers();
+  useEffect(() => {
+       fetch('https://api.github.com/users')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error('Error fetching users:', error));
   }, []);
 
   return (
@@ -25,7 +24,7 @@ export function GithubUseList() {
           </li>
         ))}
       </ul>
-      <Route path={`${path}/:username`} component={ShowGithubUser} />
+  
     </div>
   );
 }
